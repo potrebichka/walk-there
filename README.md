@@ -1,25 +1,49 @@
-# _Super Galactic Age Calculator_
+# _Walk There_
 
-#### _Version 11/15/2019_
+#### _Version 12/02/2019_
 
 #### By _**Nina Potrebich**_
 
 ## Description
 
-_A website where user can get his/her age on different planets._
+_A website where user can look up ._
 
-## Setup/Installation Requirements
+## Getting Started
 
-* _Open page in browser._
-* _._
-* _._
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+### Prerequisites
+
+* NodeJS
+* Go to the website https://opencagedata.com/api and get your own API key(YOUR_KEY).
+
+### Installing
+
+Create a `.env` file in the root of your project and insert your key/value pairs in the following format of `KEY=VALUE`:
+
+```sh
+API_KEY=YOUR_KEY
+```
+
+Using Node, install the project dependencies: 
+```
+npm install
+```
+
+Once the dependencies are installed (it will take a few minutes), your project is ready to go.:
+
+```
+npm run build
+```
 
 ## Specifications:
-* User can choose different sizes of pizza.
+* A user is able to select location where he/she looks for attrations.
+* If user left field empty he gets data for his current location. (Allow your browser to use your location).
+
 
 ## Technologies Used
 
-_HTML, CSS, jQuery, Bootstrap, JavaScript, Webpack_
+_HTML, CSS, jQuery, Bootstrap, JavaScript, NodeJS_
 
 ### License
 

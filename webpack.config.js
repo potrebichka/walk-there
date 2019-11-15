@@ -1,9 +1,7 @@
-  
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-
 
 module.exports = {
   entry: './src/main.js',
@@ -19,10 +17,11 @@ module.exports = {
     new UglifyJsPlugin({ sourceMap: true }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'AgeCalculator',
+      title: 'DoctorLookup',
       template: './src/index.html',
       inject: 'body'
-    })
+    }),
+    new Dotenv()
   ],
   module: {
     rules: [
@@ -40,7 +39,13 @@ module.exports = {
             /spec/
           ],
         loader: "eslint-loader"
-      }
+      },
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: [
+            'file-loader',
+        ],
+      },
     ]
   }
 };
