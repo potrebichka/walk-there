@@ -1,3 +1,8 @@
 #results {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.planet {
+    width: 200px;
 }

@@ -18,6 +18,7 @@ $(function() {
         $("#uranusAge").text(user.getUranusAge());
         $("#neptuneAge").text(user.getNeptuneAge());
         $("#plutoAge").text(user.getPlutoAge());
-        $("#results").show();
+        
+        
     });
 });

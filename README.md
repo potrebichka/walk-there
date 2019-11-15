@@ -8,18 +8,34 @@
 
 _A website where user can get his/her age on different planets._
 
-## Setup/Installation Requirements
+## Getting Started
 
-* _Open page in browser._
-* _Enter your age._
-* _Get results._
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+
+### Prerequisites
+
+* NodeJS
+* AureliaJS
+
+### Installing
+
+Using Node, install the project dependencies: 
+```
+npm install
+```
+
+Once the dependencies are installed (it will take a few minutes), your project is ready to go.:
+
+```
+npm run build
+```
 
 ## Specifications:
-* User can choose different sizes of pizza.
+* .
 
 ## Technologies Used
 
-_HTML, CSS, jQuery, Bootstrap, JavaScript, Webpack_
+_HTML, CSS, jQuery, Bootstrap, JavaScript, NodeJS_
 
 ### License
 
