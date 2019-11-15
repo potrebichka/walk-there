@@ -1,8 +1,61 @@
 #results {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+
+body {
+    background-image: url(./img/fig13.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    color: indigo;
+    font-size: 45px;
+}
+
+#ageForm {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+    color: indigo
+}
+
+#ageForm button {
+    background-color: indigo;
+    font-size: 25px;
 }
 
 .planet {
+    width: 300px;
+    background-color: rgba(118,108,108, 0.8);
+    border: 1px solid black;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.planet h2 {
+    text-align: center;
+    text-decoration: underline;
+    color: indigo;
+}
+
+.planet img {
     width: 200px;
+    margin-left: 50px;
+}
+
+.planet p {
+    margin: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.planet p span {
+    font-weight: normal;
 }

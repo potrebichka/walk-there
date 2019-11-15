@@ -63,7 +63,7 @@ export class AgeCalculator {
     getStatistic() {
         const statistic = lifeExpectancy(this.sex, this.country);
         if (this.getEarthAge() === "You haven't born yet") {
-            return statistic
+            return statistic;
         }
         return statistic - (this.numberOfDays / 365.26);
     }
@@ -75,6 +75,48 @@ export class AgeCalculator {
     getLifeExpectMercury() {
         const mercuryOrbitPeriod = 87.97;
         const earthOrbitPeriod = 365.26;
-        return this.getStatistic() * earthOrbitPeriod / mercuryOrbitPeriod;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / mercuryOrbitPeriod);
+    }
+
+    getLifeExpectVenus() {
+        const venusOrbitPeriod = 224.7;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / venusOrbitPeriod);
+    }
+
+    getLifeExpectMars() {
+        const marsOrbitPeriod = 1.8808476*365.26;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / marsOrbitPeriod);
+    }
+
+    getLifeExpectJupiter() {
+        const jupiterOrbitPeriod = 11.862615*365.26;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / jupiterOrbitPeriod);
+    }
+
+    getLifeExpectSaturn() {
+        const saturnOrbitPeriod = 29.447498*365.26;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / saturnOrbitPeriod);
+    }
+
+    getLifeExpectUranus() {
+        const uranusOrbitPeriod = 84.016846*365.26;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / uranusOrbitPeriod);
+    }
+
+    getLifeExpectNeptune() {
+        const neptuneOrbitPeriod = 164.79132*365.26;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / neptuneOrbitPeriod);
+    }
+
+    getLifeExpectPluto() {
+        const plutoOrbitPeriod = 247.92065*365.26;
+        const earthOrbitPeriod = 365.26;
+        return parseInt(this.getStatistic() * earthOrbitPeriod / plutoOrbitPeriod);
     }
 }

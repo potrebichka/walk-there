@@ -116,66 +116,58 @@ describe('Age Calculator - Life Expectancy', ()=> {
     });
 
     test("should correctly return how many years a user has left to live on Mercury", ()=> {
-        expect(user1.getLifeExpectMercury()).toEqual(43);
-        expect(user2.getLifeExpectMercury()).toEqual(-17);
-        expect(user3.getLifeExpectMercury()).toEqual(67);
-        expect(user4.getLifeExpectMercury()).toEqual(81);
-        expect(user5.getLifeExpectMercury()).toEqual(84);
+        expect(user1.getLifeExpectMercury()).toEqual(182);
+        expect(user2.getLifeExpectMercury()).toEqual(-74);
+        expect(user4.getLifeExpectMercury()).toEqual(336);
+        expect(user5.getLifeExpectMercury()).toEqual(349);
     });
 
     test("should correctly return how many years a user has left to live on Venus", ()=> {
-        expect(user1.getLifeExpectVenus()).toEqual(43);
-        expect(user2.getLifeExpectVenus()).toEqual(-17);
-        expect(user3.getLifeExpectVenus()).toEqual(67);
-        expect(user4.getLifeExpectVenus()).toEqual(81);
-        expect(user5.getLifeExpectVenus()).toEqual(84);
+        expect(user1.getLifeExpectVenus()).toEqual(71);
+        expect(user2.getLifeExpectVenus()).toEqual(-29);
+        expect(user4.getLifeExpectVenus()).toEqual(131);
+        expect(user5.getLifeExpectVenus()).toEqual(136);
     });
 
         test("should correctly return how many years a user has left to live on Mars", ()=> {
-        expect(user1.getLifeExpectMars()).toEqual(43);
-        expect(user2.getLifeExpectMars()).toEqual(-17);
-        expect(user3.getLifeExpectMars()).toEqual(67);
-        expect(user4.getLifeExpectMars()).toEqual(81);
-        expect(user5.getLifeExpectMars()).toEqual(84);
+        expect(user1.getLifeExpectMars()).toEqual(23);
+        expect(user2.getLifeExpectMars()).toEqual(-9);
+        expect(user4.getLifeExpectMars()).toEqual(43);
+        expect(user5.getLifeExpectMars()).toEqual(44);
     });
 
     test("should correctly return how many years a user has left to live on Jupiter", ()=> {
-        expect(user1.getLifeExpectJupiter()).toEqual(43);
-        expect(user2.getLifeExpectJupiter()).toEqual(-17);
-        expect(user3.getLifeExpectJupiter()).toEqual(67);
-        expect(user4.getLifeExpectJupiter()).toEqual(81);
-        expect(user5.getLifeExpectJupiter()).toEqual(84);
+        expect(user1.getLifeExpectJupiter()).toEqual(3);
+        expect(user2.getLifeExpectJupiter()).toEqual(-1);
+        expect(user4.getLifeExpectJupiter()).toEqual(6);
+        expect(user5.getLifeExpectJupiter()).toEqual(7);
     });
 
     test("should correctly return how many years a user has left to live on Saturn", ()=> {
-        expect(user1.getLifeExpectSaturn()).toEqual(43);
-        expect(user2.getLifeExpectSaturn()).toEqual(-17);
-        expect(user3.getLifeExpectSaturn()).toEqual(67);
-        expect(user4.getLifeExpectSaturn()).toEqual(81);
-        expect(user5.getLifeExpectSaturn()).toEqual(84);
+        expect(user1.getLifeExpectSaturn()).toEqual(1);
+        expect(user2.getLifeExpectSaturn()).toEqual(-0);
+        expect(user4.getLifeExpectSaturn()).toEqual(2);
+        expect(user5.getLifeExpectSaturn()).toEqual(2);
     });
 
     test("should correctly return how many years a user has left to live on Uranus", ()=> {
-        expect(user1.getLifeExpectUranus()).toEqual(43);
-        expect(user2.getLifeExpectUranus()).toEqual(-17);
-        expect(user3.getLifeExpectUranus()).toEqual(67);
-        expect(user4.getLifeExpectUranus()).toEqual(81);
-        expect(user5.getLifeExpectUranus()).toEqual(84);
+        expect(user1.getLifeExpectUranus()).toEqual(0);
+        expect(user2.getLifeExpectUranus()).toEqual(-0);
+        expect(user4.getLifeExpectUranus()).toEqual(0);
+        expect(user5.getLifeExpectUranus()).toEqual(1);
     });
 
     test("should correctly return how many years a user has left to live on Neptune", ()=> {
-        expect(user1.getLifeExpectNeptune()).toEqual(43);
-        expect(user2.getLifeExpectNeptune()).toEqual(-17);
-        expect(user3.getLifeExpectNeptune()).toEqual(67);
-        expect(user4.getLifeExpectNeptune()).toEqual(81);
-        expect(user5.getLifeExpectNeptune()).toEqual(84);
+        expect(user1.getLifeExpectNeptune()).toEqual(0);
+        expect(user2.getLifeExpectNeptune()).toEqual(-0);
+        expect(user4.getLifeExpectNeptune()).toEqual(0);
+        expect(user5.getLifeExpectNeptune()).toEqual(0);
     });
 
     test("should correctly return how many years a user has left to live on Pluto", ()=> {
-        expect(user1.getLifeExpectPluto()).toEqual(43);
-        expect(user2.getLifeExpectPluto()).toEqual(-17);
-        expect(user3.getLifeExpectPluto()).toEqual(67);
-        expect(user4.getLifeExpectPluto()).toEqual(81);
-        expect(user5.getLifeExpectPluto()).toEqual(84);
+        expect(user1.getLifeExpectPluto()).toEqual(0);
+        expect(user2.getLifeExpectPluto()).toEqual(-0);
+        expect(user4.getLifeExpectPluto()).toEqual(0);
+        expect(user5.getLifeExpectPluto()).toEqual(0);
     });
 });
