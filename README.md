@@ -11,8 +11,8 @@ _A website where user can get his/her age on different planets._
 ## Setup/Installation Requirements
 
 * _Open page in browser._
-* _._
-* _._
+* _Enter your age._
+* _Get results._
 
 ## Specifications:
 * User can choose different sizes of pizza.
