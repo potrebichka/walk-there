@@ -1,3 +1,5 @@
+import { lifeExpectancy } from '../src/lifeExpectancy';
+
 export class AgeCalculator {
     constructor(date, sex, country) {
         this.birthday = date;
@@ -56,5 +58,23 @@ export class AgeCalculator {
     getPlutoAge() {
         const plutoOrbitPeriod = 247.92065*365.26;
         return this.getAge(plutoOrbitPeriod);
+    }
+
+    getStatistic() {
+        const statistic = lifeExpectancy(this.sex, this.country);
+        if (this.getEarthAge() === "You haven't born yet") {
+            return statistic
+        }
+        return statistic - (this.numberOfDays / 365.26);
+    }
+
+    getLifeExpectEarth() {
+        return parseInt(this.getStatistic());
+    }
+
+    getLifeExpectMercury() {
+        const mercuryOrbitPeriod = 87.97;
+        const earthOrbitPeriod = 365.26;
+        return this.getStatistic() * earthOrbitPeriod / mercuryOrbitPeriod;
     }
 }
