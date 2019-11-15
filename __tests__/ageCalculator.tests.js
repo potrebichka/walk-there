@@ -8,7 +8,8 @@ describe ('Age Calculator', () => {
         user3 = new AgeCalculator(new Date('10-05-2012'));
         user4 = new AgeCalculator(new Date('10-05-2032'));
         user5 = new AgeCalculator(new Date());
-    }) 
+    });
+     
     test('should correctly create object Age Calculator', () => {
         expect(user1.birthday).toEqual(new Date('07-27-1987'));
         expect(user2.birthday).toEqual(new Date('01-29-1951'));
