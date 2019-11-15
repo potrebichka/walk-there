@@ -1,7 +1,9 @@
 export class AgeCalculator {
-    constructor(date) {
+    constructor(date, sex, country) {
         this.birthday = date;
         this.numberOfDays = (new Date() >= date) ? parseInt((new Date().getTime() - date.getTime())/(1000*3600*24)) : null;
+        this.sex = sex;
+        this.country = country;
     }
 
     getAge(orbitPeriod) {

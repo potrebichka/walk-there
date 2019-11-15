@@ -1,20 +1,19 @@
 import { AgeCalculator } from '../src/ageCalculator';
 
-describe ('Age Calculator', () => {
+describe ('Age Calculator - age', () => {
     let user1, user2, user3, user4, user5;
     beforeEach(() => {
-        user1 = new AgeCalculator(new Date('07-27-1987'));
-        user2 = new AgeCalculator(new Date('01-29-1951'));
-        user3 = new AgeCalculator(new Date('10-05-2012'));
-        user4 = new AgeCalculator(new Date('10-05-2032'));
-        user5 = new AgeCalculator(new Date());
+        user1 = new AgeCalculator(new Date('07-27-1987'), "female", "Russia");
+        user2 = new AgeCalculator(new Date('01-29-1951'), "male", "Angola");
+        user3 = new AgeCalculator(new Date('10-05-2012'), "male", "United_States");
+        user4 = new AgeCalculator(new Date('10-05-2032'), "female", "United States");
+        user5 = new AgeCalculator(new Date(), "female", "Canada");
     });
      
     test('should correctly create object Age Calculator', () => {
         expect(user1.birthday).toEqual(new Date('07-27-1987'));
-        expect(user2.birthday).toEqual(new Date('01-29-1951'));
-        expect(user3.birthday).toEqual(new Date('10-05-2012'));
-        expect(user4.birthday).toEqual(new Date('10-05-2032'));
+        expect(user1.sex).toEqual("female");
+        expect(user1.country).toEqual("Russia");
     });
 
     test('should correctly create object Age Calculator and calculate number of days', () => {
@@ -96,4 +95,19 @@ describe ('Age Calculator', () => {
         expect(user4.getPlutoAge()).toEqual("You haven't born yet");
         expect(user5.getPlutoAge()).toEqual(0);
     });
+})
+
+describe('Age Calculator - Life Expectancy', ()=> {
+    let user1, user2, user3, user4, user5;
+    beforeEach(() => {
+        user1 = new AgeCalculator(new Date('07-27-1987'));
+        user2 = new AgeCalculator(new Date('01-29-1951'));
+        user3 = new AgeCalculator(new Date('10-05-2012'));
+        user4 = new AgeCalculator(new Date('10-05-2032'));
+        user5 = new AgeCalculator(new Date());
+    });
+
+    test("should correctly return how many years a user has left to live on Earth", ()=> {
+        expect(user1.lifeExpectEarth()).toEqual()
+    })
 })
