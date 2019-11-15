@@ -100,14 +100,18 @@ describe ('Age Calculator - age', () => {
 describe('Age Calculator - Life Expectancy', ()=> {
     let user1, user2, user3, user4, user5;
     beforeEach(() => {
-        user1 = new AgeCalculator(new Date('07-27-1987'));
-        user2 = new AgeCalculator(new Date('01-29-1951'));
-        user3 = new AgeCalculator(new Date('10-05-2012'));
-        user4 = new AgeCalculator(new Date('10-05-2032'));
-        user5 = new AgeCalculator(new Date());
+        user1 = new AgeCalculator(new Date('07-27-1987'), "female", "Russia");
+        user2 = new AgeCalculator(new Date('01-29-1951'), "male", "Angola");
+        user3 = new AgeCalculator(new Date('10-05-2012'), "male", "United_States");
+        user4 = new AgeCalculator(new Date('10-05-2032'), "female", "United States");
+        user5 = new AgeCalculator(new Date(), "female", "Canada");
     });
 
     test("should correctly return how many years a user has left to live on Earth", ()=> {
-        expect(user1.lifeExpectEarth()).toEqual()
+        expect(user1.lifeExpectEarth()).toEqual(42);
+        expect(user2.lifeExpectEarth()).toEqual(-18);
+        expect(user3.lifeExpectEarth()).toEqual(67);
+        expect(user4.lifeExpectEarth()).toEqual(81);
+        expect(user5.lifeExpectEarth()).toEqual(84);
     })
 })
