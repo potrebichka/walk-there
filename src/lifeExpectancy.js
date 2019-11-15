@@ -1,6 +1,7 @@
 export class LifeExpectancy {
-    constructor() {
-
+    constructor(sex, country) {
+        this.sex = sex;
+        this.country = country
     }
 }
 
