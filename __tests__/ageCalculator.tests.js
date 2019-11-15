@@ -171,3 +171,20 @@ describe('Age Calculator - Life Expectancy', ()=> {
         expect(user5.getLifeExpectPluto()).toEqual(0);
     });
 });
+
+describe('Age Calculator - Life Expectancy', ()=> {
+    let user1, user2, user3, user4, user5;
+    beforeEach(() => {
+        user1 = new AgeCalculator(new Date('07-27-1987'), "female", "Russia");
+        user2 = new AgeCalculator(new Date('01-29-1951'), "male", "Angola");
+        user3 = new AgeCalculator(new Date('10-05-2012'), "male", "United_States");
+        user4 = new AgeCalculator(new Date('10-05-2032'), "female", "United_States");
+    });
+
+    test("should correctly return next birthday on Earth", ()=> {
+        expect(user1.getNextBirthdayEarth()).toEqual(new Date('07-27-2020'));
+        expect(user2.getNextBirthdayEarth()).toEqual(new Date('01-29-2020'));
+        expect(user3.getNextBirthdayEarth()).toEqual(new Date('10-05-2020'));
+        expect(user4.getNextBirthdayEarth()).toEqual(new Date("10-05-2032"));
+    });
+});
