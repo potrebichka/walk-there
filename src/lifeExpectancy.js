@@ -1,8 +1,15 @@
-export class LifeExpectancy {
-    constructor(sex, country) {
-        this.sex = sex;
-        this.country = country
+export function lifeExpectancy(sex, country) {
+    let index;
+    index = countries.includes(country) ? index = countries.indexOf(country) : index = null;
+    if (!index && index != 0) {
+        return false
     }
+    if (sex === "female") {
+        return femaleExpectancies[index];
+    } else if (sex === "male") {
+        return maleExpectancies[index]
+    }
+    return false;
 }
 
 const countries =  ["Japan", "Switzerland", "Singapore", "Australia", "Spain", "Iceland", "Italy", "Israel", "Sweden", "France", "South_Korea", "Canada", "Luxembourg", "Netherlands", "Norway", "Malta", "New_Zealand", "Austria", "Ireland", "United_Kingdom", "Belgium", "Finland", "Portugal", "Germany", "Greece", "Slovenia", "Denmark", "Cyprus", "Chile", "Costa_Rica", "Qatar", "Cuba", "Czech_Republic", "Maldives", "Panama", "Croatia", "Albania", "United_States", "Brunei", "Estonia", "Poland", "Bosnia_and_Herzegovina", "United_Arab_Emirates", "Uruguay", "Bahrain", "Mexico", "Slovakia", "Oman", "Antigua_and_Barbuda", "Argentina", "Jamaica", "Ecuador", "China", "Montenegro", "Bahamas", "Vietnam", "Hungary", "Turkey", "North_Macedonia", "Algeria", "Serbia", "Iran", "Peru", "Barbados", "Tunisia", "Saint_Lucia", "Malaysia", "Romania", "Brazil", "Lebanon", "Thailand", "Sri_Lanka", "Armenia", "Nicaragua", "Colombia", "Kuwait", "Honduras", "Mauritius", "Latvia", "Saudi_Arabia", "Bulgaria", "Georgia", "Morocco", "Jordan", "Venezuela", "Paraguay", "Samoa", "Dominican_Republic", "Grenada", "Lithuania", "Tonga", "El_Salvador", "Cape_Verde", "Saint_Vincent_and_the_Grenadines", "Seychelles", "Libya", "Azerbaijan", "Belarus", "Moldova", "Vanuatu", "Guatemala", "Bangladesh", "Suriname", "Ukraine", "Trinidad_and_Tobago", "Kyrgyzstan", "Egypt", "Bolivia", "North_Korea", "Russia", "Kazakhstan", "Belize", "Fiji", "Bhutan", "Tajikistan", "Micronesia", "Uzbekistan", "Solomon_Islands", "Nepal", "Indonesia", "Iraq", "Mongolia", "Cambodia", "Philippines", "India", "Timor-Leste", "Sao_Tome_and_Principe", "Senegal", "Myanmar", "Pakistan", "Kiribati", "Turkmenistan", "Guyana", "Rwanda", "Gabon", "Namibia", "Yemen", "Laos", "Botswana", "Madagascar", "Ethiopia", "Congo", "Eritrea", "Syria", "Sudan", "Comoros", "Djibouti", "Haiti", "Kenya", "Mauritania", "Papua_New_Guinea", "South_Africa", "Ghana", "Uganda", "Niger", "Tanzania", "Zambia", "Liberia", "Gambia", "Zimbabwe", "Afghanistan", "Benin", "Burkina_Faso", "Togo", "DR_Congo", "Burundi", "Guinea", "Guinea-Bissau", "Eswatini_(Swaziland)", "Malawi", "Mali", "Equatorial_Guinea", "Mozambique", "South_Sudan", "Cameroon", "Somalia", "Nigeria", "Lesotho", "Cote_d'Ivoire", "Chad", "Central_African_Republic", "Angola", "Sierra_Leone"];
