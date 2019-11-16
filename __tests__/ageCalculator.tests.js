@@ -187,4 +187,60 @@ describe('Age Calculator - Life Expectancy', ()=> {
         expect(user3.getNextBirthdayEarth()).toEqual('10-05-2020');
         expect(user4.getNextBirthdayEarth()).toEqual("10-05-2032");
     });
+
+    test("should correctly return next birthday on Mercury", ()=> {
+        expect(user1.getNextBirthdayMercury()).toEqual('01-30-2022');
+        expect(user2.getNextBirthdayMercury()).toEqual('12-17-2019');
+        expect(user3.getNextBirthdayMercury()).toEqual('12-27-2019');
+        expect(user4.getNextBirthdayMercury()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Venus", ()=> {
+        expect(user1.getNextBirthdayVenus()).toEqual('03-04-2020');
+        expect(user2.getNextBirthdayVenus()).toEqual('12-24-2019');
+        expect(user3.getNextBirthdayVenus()).toEqual('02-22-2020');
+        expect(user4.getNextBirthdayVenus()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Mars", ()=> {
+        expect(user1.getNextBirthdayMars()).toEqual('06-03-2021');
+        expect(user2.getNextBirthdayMars()).toEqual('09-01-2020');
+        expect(user3.getNextBirthdayMars()).toEqual('04-13-2020');
+        expect(user4.getNextBirthdayMars()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Jupiter", ()=> {
+        expect(user1.getNextBirthdayJupiter()).toEqual('02-26-2023');
+        expect(user2.getNextBirthdayJupiter()).toEqual('4-02-2022');
+        expect(user3.getNextBirthdayJupiter()).toEqual('08-15-2024');
+        expect(user4.getNextBirthdayJupiter()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Saturn", ()=> {
+        expect(user1.getNextBirthdaySaturn()).toEqual('06-26-2046');
+        expect(user2.getNextBirthdaySaturn()).toEqual('06-14-2039');
+        expect(user3.getNextBirthdaySaturn()).toEqual('03-21-2042');
+        expect(user4.getNextBirthdaySaturn()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Uranus", ()=> {
+        expect(user1.getNextBirthdayUranus()).toEqual('07-31-2071');
+        expect(user2.getNextBirthdayUranus()).toEqual('02-02-2035');
+        expect(user3.getNextBirthdayUranus()).toEqual('10-09-2096');
+        expect(user4.getNextBirthdayUranus()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Neptune", ()=> {
+        expect(user1.getNextBirthdayNeptune()).toEqual('05-12-2152');
+        expect(user2.getNextBirthdayNeptune()).toEqual('11-15-2115');
+        expect(user3.getNextBirthdayNeptune()).toEqual('07-22-2177');
+        expect(user4.getNextBirthdayNeptune()).toEqual("10-05-2032");
+    });
+
+    test("should correctly return next birthday on Pluto", ()=> {
+        expect(user1.getNextBirthdayPluto()).toEqual('03-02-2236');
+        expect(user2.getNextBirthdayPluto()).toEqual('09-05-2199');
+        expect(user3.getNextBirthdayPluto()).toEqual('10-05-2020');
+        expect(user4.getNextBirthdayPluto()).toEqual("05-13-2261");
+    });
 });
