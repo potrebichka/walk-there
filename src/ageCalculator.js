@@ -1,9 +1,20 @@
 import { lifeExpectancy } from '../src/lifeExpectancy';
 
+//global variables
+const earthOrbitPeriod = 365.26;
+const mercuryOrbitPeriod = 87.97;
+const venusOrbitPeriod = 224.7;
+const marsOrbitPeriod = 1.8808476*365.26;
+const jupiterOrbitPeriod = 11.862615*365.26;
+const saturnOrbitPeriod = 29.447498*365.26;
+const uranusOrbitPeriod = 84.016846*365.26;
+const neptuneOrbitPeriod = 164.79132*365.26;
+const plutoOrbitPeriod = 247.92065*365.26;
+
 export class AgeCalculator {
     constructor(date, sex, country) {
         this.birthday = date;
-        this.numberOfDays = (new Date() >= date) ? parseInt((new Date().getTime() - date.getTime())/(1000*3600*24)) : null;
+        this.numberOfDays = (new Date() >= date) ? (new Date().getTime() - date.getTime())/(1000*3600*24) : null;
         this.sex = sex;
         this.country = country;
     }
@@ -16,47 +27,38 @@ export class AgeCalculator {
     }
 
     getEarthAge() {
-        const earthOrbitPeriod = 365.26;
         return this.getAge(earthOrbitPeriod);
     }
 
     getMercuryAge() {
-        const mercuryOrbitPeriod = 87.97;
         return this.getAge(mercuryOrbitPeriod);
     }
 
     getVenusAge() {
-        const venusOrbitPeriod = 224.7;
         return this.getAge(venusOrbitPeriod);
     }
 
     getMarsAge() {
-        const marsOrbitPeriod = 1.8808476*365.26;
         return this.getAge(marsOrbitPeriod);
     }
 
     getJupiterAge() {
-        const jupiterOrbitPeriod = 11.862615*365.26;
         return this.getAge(jupiterOrbitPeriod);
     }
 
     getSaturnAge() {
-        const saturnOrbitPeriod = 29.447498*365.26;
         return this.getAge(saturnOrbitPeriod);
     }
 
     getUranusAge() {
-        const uranusOrbitPeriod = 84.016846*365.26;
         return this.getAge(uranusOrbitPeriod);
     }
 
     getNeptuneAge() {
-        const neptuneOrbitPeriod = 164.79132*365.26;
         return this.getAge(neptuneOrbitPeriod);
     }
 
     getPlutoAge() {
-        const plutoOrbitPeriod = 247.92065*365.26;
         return this.getAge(plutoOrbitPeriod);
     }
 
@@ -65,7 +67,7 @@ export class AgeCalculator {
         if (this.getEarthAge() === "You haven't born yet") {
             return statistic;
         }
-        return statistic - (this.numberOfDays / 365.26);
+        return statistic - (this.numberOfDays / earthOrbitPeriod);
     }
 
     getLifeExpectEarth() {
@@ -73,50 +75,49 @@ export class AgeCalculator {
     }
 
     getLifeExpectMercury() {
-        const mercuryOrbitPeriod = 87.97;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / mercuryOrbitPeriod);
     }
 
     getLifeExpectVenus() {
-        const venusOrbitPeriod = 224.7;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / venusOrbitPeriod);
     }
 
     getLifeExpectMars() {
-        const marsOrbitPeriod = 1.8808476*365.26;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / marsOrbitPeriod);
     }
 
     getLifeExpectJupiter() {
-        const jupiterOrbitPeriod = 11.862615*365.26;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / jupiterOrbitPeriod);
     }
 
     getLifeExpectSaturn() {
-        const saturnOrbitPeriod = 29.447498*365.26;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / saturnOrbitPeriod);
     }
 
     getLifeExpectUranus() {
-        const uranusOrbitPeriod = 84.016846*365.26;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / uranusOrbitPeriod);
     }
 
     getLifeExpectNeptune() {
-        const neptuneOrbitPeriod = 164.79132*365.26;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / neptuneOrbitPeriod);
     }
 
     getLifeExpectPluto() {
-        const plutoOrbitPeriod = 247.92065*365.26;
-        const earthOrbitPeriod = 365.26;
         return parseInt(this.getStatistic() * earthOrbitPeriod / plutoOrbitPeriod);
+    }
+
+    getNextBirthdayEarth() {
+        let day = this.birthday.getDate().toString();
+        day.length === 1 ? day = "0" + day : null;
+        let month = (this.birthday.getMonth() + 1).toString();
+        month.length === 1 ? month = "0" + month : null;
+        let year;
+        if (this.getEarthAge() === "You haven't born yet") {
+            year = this.birthday.getFullYear();
+        } else {
+            year = this.birthday.getFullYear() + this.getEarthAge()+1; 
+        }
+        
+        return `${month}-${day}-${year}`
     }
 }

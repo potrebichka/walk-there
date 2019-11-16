@@ -17,11 +17,11 @@ describe ('Age Calculator - age', () => {
     });
 
     test('should correctly create object Age Calculator and calculate number of days', () => {
-        expect(user1.numberOfDays).toEqual(11799);
-        expect(user2.numberOfDays).toEqual(25127);
-        expect(user3.numberOfDays).toEqual(2597);
+        expect(parseInt(user1.numberOfDays)).toEqual(11799);
+        expect(parseInt(user2.numberOfDays)).toEqual(25127);
+        expect(parseInt(user3.numberOfDays)).toEqual(2597);
         expect(user4.numberOfDays).toEqual(null);
-        expect(user5.numberOfDays).toEqual(0);
+        expect(parseInt(user5.numberOfDays)).toEqual(0);
     });
 
     test('should correctly return user age in Earth years', () => {
@@ -182,9 +182,9 @@ describe('Age Calculator - Life Expectancy', ()=> {
     });
 
     test("should correctly return next birthday on Earth", ()=> {
-        expect(user1.getNextBirthdayEarth()).toEqual(new Date('07-27-2020'));
-        expect(user2.getNextBirthdayEarth()).toEqual(new Date('01-29-2020'));
-        expect(user3.getNextBirthdayEarth()).toEqual(new Date('10-05-2020'));
-        expect(user4.getNextBirthdayEarth()).toEqual(new Date("10-05-2032"));
+        expect(user1.getNextBirthdayEarth()).toEqual('07-27-2020');
+        expect(user2.getNextBirthdayEarth()).toEqual('01-29-2020');
+        expect(user3.getNextBirthdayEarth()).toEqual('10-05-2020');
+        expect(user4.getNextBirthdayEarth()).toEqual("10-05-2032");
     });
 });
