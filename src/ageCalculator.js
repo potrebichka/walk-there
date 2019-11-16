@@ -118,6 +118,6 @@ export class AgeCalculator {
             year = this.birthday.getFullYear() + this.getEarthAge()+1; 
         }
         
-        return `${month}-${day}-${year}`
+        return `${month}-${day}-${year}`;
     }
 }

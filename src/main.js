@@ -29,7 +29,9 @@ $(function() {
         const dateInput = new Date($("#userInput").val());
         const sexInput = $("#sexInput").val();
         const countryInput = $("#countryInput").val();
+
         const user = new AgeCalculator(dateInput, sexInput, countryInput);
+
         $("#earthAge").text(user.getEarthAge());
         $("#mercuryAge").text(user.getMercuryAge());
         $("#venusAge").text(user.getVenusAge());
@@ -39,6 +41,19 @@ $(function() {
         $("#uranusAge").text(user.getUranusAge());
         $("#neptuneAge").text(user.getNeptuneAge());
         $("#plutoAge").text(user.getPlutoAge());
+
+        $("#mercuryExpect").text(user.getLifeExpectMercury());
+        $("#venusExpect").text(user.getLifeExpectVenus());
+        $("#marsExpect").text(user.getLifeExpectMars());
+        $("#earthExpect").text(user.getLifeExpectEarth());
+        $("#jupiterExpect").text(user.getLifeExpectJupiter());
+        $("#saturnExpect").text(user.getLifeExpectSaturn());
+        $("#uranusExpect").text(user.getLifeExpectUranus());
+        $("#neptuneExpect").text(user.getLifeExpectNeptune());
+        $("#plutoExpect").text(user.getLifeExpectPluto());
+
+        $("#earthBirthday").text(user.getNextBirthdayEarth());
+
         $("#results").show();
         
     });
