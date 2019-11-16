@@ -120,4 +120,24 @@ export class AgeCalculator {
         
         return `${month}-${day}-${year}`;
     }
+
+    getStringResult(birthdayDate) {
+        let day = birthdayDate.getDate().toString();
+        day.length === 1 ? day = "0" + day : null;
+        let month = (birthdayDate.getMonth() + 1).toString();
+        month.length === 1 ? month = "0" + month : null;
+        
+        return `${month}-${day}-${birthdayDate.getFullYear()}`;
+    }
+
+    getNextBirthdayMercury() {
+        let birthdayMercury;
+        if (this.getMercuryAge() === "You haven't born yet") {
+            birthdayMercury = this.birthday;
+        } else {
+            birthdayMercury = new Date((parseInt(this.getMercuryAge()) + 1) * mercuryOrbitPeriod * 3600*1000*24 + this.birthday.getTime());
+        }
+        
+        return this.getStringResult(birthdayMercury);
+    }
 }

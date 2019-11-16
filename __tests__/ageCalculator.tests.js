@@ -189,7 +189,7 @@ describe('Age Calculator - Life Expectancy', ()=> {
     });
 
     test("should correctly return next birthday on Mercury", ()=> {
-        expect(user1.getNextBirthdayMercury()).toEqual('01-30-2022');
+        expect(user1.getNextBirthdayMercury()).toEqual('01-30-2020');
         expect(user2.getNextBirthdayMercury()).toEqual('12-17-2019');
         expect(user3.getNextBirthdayMercury()).toEqual('12-27-2019');
         expect(user4.getNextBirthdayMercury()).toEqual("10-05-2032");
