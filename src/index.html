@@ -5,7 +5,31 @@
     </head>
     <body>
         <div class="container">
-         
+            <div class="jumbotron">
+                Doctor Lookup
+            </div>
+            <form id="locationForm">
+                <label for="userLocationInput">Enter location:</label>
+                <input type="text" id="userLocationInput">
+                <button type="submit" class="btn btn-info">Submit</button>
+                <button type="button" class="btn btn-success">Use current's user location</button>
+            </form>
+            <h2 class="afterGettingLocation">Find doctor by medical issue or by speciality</h2>
+            <form id="symptomsForm" class="afterGettingLocation">
+                <label for="symptomsUserSelect">Select a medical issue:</label>
+                <select name="symptoms" id="symptomsUserSelect">
+                </select>
+                <button type="submit" class="btn btn-primary">Select</button>
+            </form>
+            <form id="specialityForm" class="afterGettingLocation">
+                <label for="specialityUserSelect">Select a medical issue:</label>
+                <select name="speciality" id="specialityUserSelect">
+                </select>
+                <button type="submit" class="btn btn-primary">Select</button>
+            </form>
+            <div class="afterSelection">
+                <ul id="doctorsList"></ul>
+            </div>
         </div>
     </body>
 </html>
