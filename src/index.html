@@ -5,9 +5,9 @@
     </head>
     <body>
         <div class="container">
-            <div class="jumbotron">
+            <h1 class="title">
                 Doctor Lookup
-            </div>
+            </h1>
             <form id="findLocationForm">
                 <div class="form-group">
                     <label for="userLocationInput">Enter location:</label>
@@ -15,6 +15,7 @@
                 </div>
                 <button type="submit" class="btn btn-info">Submit</button>
             </form>
+            <hr>
             <form id="findDoctorByIssueForm">
                 <h2>Find doctor by location and medical issue:</h2>
                 <div class="form-group">
@@ -24,10 +25,10 @@
                 <button type="submit" class="btn btn-info">Submit</button>
             </form>
             <div class="results">
-                <h2 id="notFound"></h2>
+                <h2 id="notFound" class="notFound"></h2>
                 <ul id="listOfDoctorsByIssue"></ul>
             </div> 
-
+            <hr>
             <form id="findDoctorByNameForm">
                 <h2>Find doctor by location and name:</h2>
                 <div class="form-group">
@@ -37,7 +38,7 @@
                 <button type="submit" class="btn btn-info">Submit</button>
             </form>
             <div class="results">
-                <h2 id="notFound2"></h2>
+                <h2 id="notFound2" class="notFound"></h2>
                 <ul id="listOfDoctorsByName"></ul>
             </div> 
         </div>

@@ -10,6 +10,8 @@ $(function() {
 
     $("#findLocationForm").submit(function(event) {
         event.preventDefault();
+        $(".notFound").text("");
+        $("ul").empty();
         const location = $("#userLocationInput2").val();    
 
         if (!location) {
@@ -37,6 +39,8 @@ $(function() {
 
     $("#findDoctorByIssueForm").submit(function(event) {
         event.preventDefault();
+        $(".notFound").text("");
+        $("ul").empty();
         const medicalIssue = $("#userIssueInput").val();        
         getDoctorsByIssue(medicalIssue, lat, lon);
        
@@ -69,10 +73,13 @@ $(function() {
             $("#listOfDoctorsByIssue").append(displayDoctor(response[i]));
         }
         $(".results").show();
+        location.href = "#listOfDoctorsByIssue";
     }
 
     $("#findDoctorByNameForm").submit(function(event) {
         event.preventDefault();
+        $(".notFound").text("");
+        $("ul").empty();
         const name = $("#userNameInput").val();     
         getDoctorsByName(name,lat,lon);   
     });
@@ -92,7 +99,6 @@ $(function() {
                 $("#notFound2").text("No doctor was found");
                 $(".results").show();
             }
-            
         })();
     }
     
@@ -103,6 +109,7 @@ $(function() {
             $("#listOfDoctorsByName").append(displayDoctor(response[i]));
         }
         $(".results").show();
+        location.href = "#listOfDoctorsByName";
     }
 
     function displayDoctor(data) {
@@ -113,12 +120,29 @@ $(function() {
                 phone = data.practices[0].phones[i].number;
             }
         }
-        return `<li>First name: ${data.profile.first_name}<br>
-            Last name: ${data.profile.last_name}<br>
-            Address: ${data.practices[0].visit_address.street} ${data.practices[0].visit_address.street2}, ${data.practices[0].visit_address.city}, ${data.practices[0].visit_address.state}, ${data.practices[0].visit_address.zip}<br>
-            Phone number: ${phone}<br>
-            Accepting new patients: ${data.practices[0].accepts_new_patients ? "yes" : "no"}
+        return `<li><strong>First name:</strong> ${data.profile.first_name}<br>
+            <strong>Last name:</strong> ${data.profile.last_name}<br>
+            <strong>Address:</strong> ${data.practices[0].visit_address.street} ${data.practices[0].visit_address.street2}, ${data.practices[0].visit_address.city}, ${data.practices[0].visit_address.state}, ${data.practices[0].visit_address.zip}<br>
+            <strong>Phone number:</strong> ${phone}<br>
+            <strong>Accepting new patients:</strong> ${data.practices[0].accepts_new_patients ? "yes" : "no"}
         </li>`
-        //firstName, lastName, address, phone number, website and whether or not the doctor is accepting new patients
     }
+
+    $("#userLocationInput").focus(function() {
+        $("#findDoctorByIssueForm").hide();
+        $("#findDoctorByNameForm").hide();
+        $(".notFound").text("");
+        $("ul").empty();
+    });
+
+    $("#userIssueInput").focus(function() {
+        $(".notFound").text("");
+        $("ul").empty();
+    })
+
+    
+    $("#userNameInput").focus(function() {
+        $(".notFound").text("");
+        $("ul").empty();
+    })
 });
