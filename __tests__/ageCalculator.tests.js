@@ -211,14 +211,14 @@ describe('Age Calculator - Life Expectancy', ()=> {
 
     test("should correctly return next birthday on Jupiter", ()=> {
         expect(user1.getNextBirthdayJupiter()).toEqual('02-26-2023');
-        expect(user2.getNextBirthdayJupiter()).toEqual('4-02-2022');
+        expect(user2.getNextBirthdayJupiter()).toEqual('04-03-2022');
         expect(user3.getNextBirthdayJupiter()).toEqual('08-15-2024');
         expect(user4.getNextBirthdayJupiter()).toEqual("10-05-2032");
     });
 
     test("should correctly return next birthday on Saturn", ()=> {
-        expect(user1.getNextBirthdaySaturn()).toEqual('06-26-2046');
-        expect(user2.getNextBirthdaySaturn()).toEqual('06-14-2039');
+        expect(user1.getNextBirthdaySaturn()).toEqual('06-25-2046');
+        expect(user2.getNextBirthdaySaturn()).toEqual('06-13-2039');
         expect(user3.getNextBirthdaySaturn()).toEqual('03-21-2042');
         expect(user4.getNextBirthdaySaturn()).toEqual("10-05-2032");
     });
@@ -231,16 +231,16 @@ describe('Age Calculator - Life Expectancy', ()=> {
     });
 
     test("should correctly return next birthday on Neptune", ()=> {
-        expect(user1.getNextBirthdayNeptune()).toEqual('05-12-2152');
-        expect(user2.getNextBirthdayNeptune()).toEqual('11-15-2115');
-        expect(user3.getNextBirthdayNeptune()).toEqual('07-22-2177');
+        expect(user1.getNextBirthdayNeptune()).toEqual('05-13-2152');
+        expect(user2.getNextBirthdayNeptune()).toEqual('11-16-2115');
+        expect(user3.getNextBirthdayNeptune()).toEqual('07-23-2177');
         expect(user4.getNextBirthdayNeptune()).toEqual("10-05-2032");
     });
 
     test("should correctly return next birthday on Pluto", ()=> {
         expect(user1.getNextBirthdayPluto()).toEqual('03-02-2236');
         expect(user2.getNextBirthdayPluto()).toEqual('09-05-2199');
-        expect(user3.getNextBirthdayPluto()).toEqual('10-05-2020');
+        expect(user3.getNextBirthdayPluto()).toEqual('05-13-2261');
         expect(user4.getNextBirthdayPluto()).toEqual("05-13-2261");
     });
 });
