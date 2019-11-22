@@ -6,23 +6,21 @@ import { FindDoctor } from './doctorService';
 import { CoordinatesFromAddress} from './coordinatesFromLocation';
 
 $(function() {
-    $("#locationForm").submit(function(event) {
-        event.preventDefault();
-        const location = $("#userLocationInput").val();
-        const medicalIssue = $("#userIssueInput").val();        
+    let lat, lon;
 
-        let lon, lat;
+    $("#findLocationForm").submit(function(event) {
+        event.preventDefault();
+        const location = $("#userLocationInput2").val();    
+
         if (!location) {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition(function(position) {
                     lat = position.coords.latitude;
                     lon=position.coords.longitude;
-                    getDoctors(medicalIssue,lat, lon);
                 });
             } else {
                 lat = "47.608013";
                 lon = "-122.335167";
-                getDoctors(medicalIssue,lat,lon);
             }
         } else {
             (async() => {
@@ -30,17 +28,33 @@ $(function() {
                 const response = await coordinatesFromLocation.getCoordinates(location);
                 lat = response.results[0].geometry.lat;
                 lon =  response.results[0].geometry.lng;
-                getDoctors(medicalIssue,lat, lon);
             })();
         }
+        $("#findDoctorByIssueForm").show();
+        $("#findDoctorByNameForm").show();
     });
 
-    function getDoctors(medicalIssue, lat,lon){
+
+    $("#findDoctorByIssueForm").submit(function(event) {
+        event.preventDefault();
+        const medicalIssue = $("#userIssueInput").val();        
+        getDoctorsByIssue(medicalIssue, lat, lon);
+       
+    });
+
+    function getDoctorsByIssue(medicalIssue, lat, lon){
+        console.log(medicalIssue, lat, lon);
         (async () => {
             try {
                 let findDoctor = new FindDoctor();
-                const response = await findDoctor.getDoctor(medicalIssue , lat, lon);
-                showDoctor(response.data);
+                const response = await findDoctor.getDoctorByIssue(medicalIssue , lat, lon);
+                if (response.data.length > 0) {
+                    showDoctorByIssue(response.data);
+                } else {
+                    $("#notFound").text("No doctor was found");
+                    $(".results").show();
+                }
+                
             } catch(error) {
                 $("#notFound").text("No doctor found");
                 $(".results").show();
@@ -49,12 +63,62 @@ $(function() {
         })();
     }
 
-    function showDoctor(response) {
-        console.log(response);
+    function showDoctorByIssue(response) {
+        $("#listOfDoctorsByIssue").empty();
         for (let i=0; i< response.length; i++) {
-            $("#listOfDoctors").append(`<li>Name: ${response[i].profile.first_name} ${response[i].profile.last_name}</li>`)
+            $("#listOfDoctorsByIssue").append(displayDoctor(response[i]));
         }
         $(".results").show();
     }
+
+    $("#findDoctorByNameForm").submit(function(event) {
+        event.preventDefault();
+        const name = $("#userNameInput").val();     
+        getDoctorsByName(name,lat,lon);   
+    });
+
+    function getDoctorsByName(name, lat, lon){
+        (async () => {
+            try {
+                let findDoctor = new FindDoctor();
+                const response = await findDoctor.getDoctorByName(name , lat, lon);
+                if (response.data.length > 0) {
+                    showDoctorByName(response.data);
+                } else {
+                    $("#notFound").text("No doctor was found");
+                    $(".results").show();
+                }
+            } catch(error) {
+                $("#notFound2").text("No doctor was found");
+                $(".results").show();
+            }
+            
+        })();
+    }
     
+
+    function showDoctorByName(response) {
+        $("#listDoctorsByName").empty();
+        for (let i=0; i< response.length; i++) {
+            $("#listOfDoctorsByName").append(displayDoctor(response[i]));
+        }
+        $(".results").show();
+    }
+
+    function displayDoctor(data) {
+        console.log(data);
+        let phone = "";
+        for (let i=0; i<data.practices[0].phones.length; i++) {
+            if (data.practices[0].phones[i].type === "landline") {
+                phone = data.practices[0].phones[i].number;
+            }
+        }
+        return `<li>First name: ${data.profile.first_name}<br>
+            Last name: ${data.profile.last_name}<br>
+            Address: ${data.practices[0].visit_address.street} ${data.practices[0].visit_address.street2}, ${data.practices[0].visit_address.city}, ${data.practices[0].visit_address.state}, ${data.practices[0].visit_address.zip}<br>
+            Phone number: ${phone}<br>
+            Accepting new patients: ${data.practices[0].accepts_new_patients ? "yes" : "no"}
+        </li>`
+        //firstName, lastName, address, phone number, website and whether or not the doctor is accepting new patients
+    }
 });

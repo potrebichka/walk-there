@@ -8,21 +8,37 @@
             <div class="jumbotron">
                 Doctor Lookup
             </div>
-            <form id="locationForm">
-                <h2>Find doctor by location and medical issue:</h2>
+            <form id="findLocationForm">
                 <div class="form-group">
                     <label for="userLocationInput">Enter location:</label>
                     <input class="form-control" type="text" id="userLocationInput" placeholder="Leave empty to use your current location">
                 </div>
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+            <form id="findDoctorByIssueForm">
+                <h2>Find doctor by location and medical issue:</h2>
                 <div class="form-group">
-                    <label for="userLocationInput">Enter a medical issue:</label>
+                    <label for="userIssueInput">Enter a medical issue:</label>
                     <input  class="form-control" type="text" id="userIssueInput" >
                 </div>
                 <button type="submit" class="btn btn-info">Submit</button>
             </form>
             <div class="results">
                 <h2 id="notFound"></h2>
-                <ul id="listOfDoctors"></ul>
+                <ul id="listOfDoctorsByIssue"></ul>
+            </div> 
+
+            <form id="findDoctorByNameForm">
+                <h2>Find doctor by location and name:</h2>
+                <div class="form-group">
+                    <label for="userNameInput">Enter name of doctor:</label>
+                    <input  class="form-control" type="text" id="userNameInput" >
+                </div>
+                <button type="submit" class="btn btn-info">Submit</button>
+            </form>
+            <div class="results">
+                <h2 id="notFound2"></h2>
+                <ul id="listOfDoctorsByName"></ul>
             </div> 
         </div>
     </body>
