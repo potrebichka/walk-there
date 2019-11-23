@@ -26,7 +26,7 @@ form h2 {
     display: none;
 }
 
-#findDoctorByIssueForm, #findDoctorByNameForm {
+#findDoctorByIssueForm, #findDoctorByNameForm, #findDoctorBySpecialityForm {
     display: none;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -52,3 +52,8 @@ li {
     background-color: #b3d9ff;
     font-size: 20px;
 }
+
+#specialitiesList {
+    margin-bottom: 20px;
+}
+

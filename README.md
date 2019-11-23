@@ -15,14 +15,16 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 * NodeJS
-* Go to website https://developer.betterdoctor.com/ and get your own API key(YOUR_KEY).
+* Go to the website https://developer.betterdoctor.com/ and get your own API key(YOUR_KEY1).
+* Go to the website https://opencagedata.com/api and get your own API key(YOUR_KEY2).
 
 ### Installing
 
 Create a `.env` file in the root of your project and insert your key/value pairs in the following format of `KEY=VALUE`:
 
 ```sh
-API_KEY=YOUR_KEY
+API_KEY1=YOUR_KEY1
+API_KEY2=YOUR_KEY2
 ```
 
 Using Node, install the project dependencies: 
@@ -37,19 +39,13 @@ npm run build
 ```
 
 ## Specifications:
-* A user should be able to enter a medical issue to receive a list of doctors in the Portland area that fit the search query.
-* A user should be able to enter a name to receive a list of doctors in the Portland area that fit the search query.
-* If the query response includes any doctors, the following information should be included about each doctor: first name, last name, address, phone number, website and whether or not the doctor is accepting new patients (the API provides this data).
-* If the API call results in an error (any message not a 200 OK), the application should return a notification that states what the error is.
-* If the query response doesn't include any doctors (for instance, if no doctors meet the search criteria), the application should return a notification that states that no doctors meet the criteria. (This is not an error so it should be handled separately from any errors.)
-
-Extra:
-* Allow users to search by location (instead of just hardcoding a value for Portland). This will involve making two API calls: one to geocode the latitude and longitude of a location and then a second call to the BetterDoctor API.
-* Add an additional API call to retrieve the list of specialities from the database before you query for a doctor, then return that list in a dropdown menu.
-* Create a list of "recently viewed" doctors and display it.
-* Create a list of "related doctors" and display it. You can define related however you wish.
-* Add static pages, links to your GitHub, social media, and more.
-* Use Google Maps API to plot the locations of doctors's practices on a map.
+* A user is able to select location where he/she looks for doctor.
+* If user left field empty he gets data for his current location. (Allow your browser to use your location).
+* A user is able to enter a medical issue to receive a list of doctors in the chosen location area that fit the search query.
+* A user is able to enter a name to receive a list of doctors in the chosen location area that fit the search query.
+* If the query response includes any doctors, the following information is included about each doctor: first name, last name, address, phone number and whether or not the doctor is accepting new patients (the API provides this data).
+* If the API call results in an error (any message not a 200 OK), the application returning a notification that states what the error is.
+* If the query response doesn't include any doctors, user gets message that 'No Doctors were found'. 
 
 
 ## Technologies Used
