@@ -46,6 +46,9 @@ npm run build
 * If the query response includes any doctors, the following information is included about each doctor: first name, last name, address, phone number and whether or not the doctor is accepting new patients (the API provides this data).
 * If the API call results in an error (any message not a 200 OK), the application returning a notification that states what the error is.
 * If the query response doesn't include any doctors, user gets message that 'No Doctors were found'. 
+* A user gets list of specialities.
+* A user is able to select a speciality to receive a list of doctors in the chosen location area that fit the search query.
+* All searches looks in the range of 100 miles. 
 
 
 ## Technologies Used

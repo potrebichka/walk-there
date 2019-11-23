@@ -199,13 +199,18 @@ $(function() {
     });
 
     $("#userIssueInput").focus(function() {
-        $(".notFound").text("");
+        $(".notFound").empty();
         $("ul").empty();
     })
 
     
     $("#userNameInput").focus(function() {
-        $(".notFound").text("");
+        $(".notFound").empty();
+        $("ul").empty();
+    })
+
+    $("#specialitiesList").focus(function() {
+        $(".notFound").empty()
         $("ul").empty();
     })
 });

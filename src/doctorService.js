@@ -1,4 +1,4 @@
-const API_KEY1='b8f1cd8682f21059f217b3ebe3197e87';
+const API_KEY1=process.env.API_KEY1;
 
 export class FindDoctor {
     async getDoctorByIssue(issue, lat, lon) {
