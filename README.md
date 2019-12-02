@@ -2,11 +2,11 @@
 
 #### _Version 12/02/2019_
 
-#### By _**Nina Potrebich**_
+#### By _**Nina Potrebich, Sharon Lee, Adilet Momunaliev, Will Quanstrom**_
 
 ## Description
 
-_A website where user can look up ._
+_A location based website that allows users to search attractions within walking distance of their location ._
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ Create a `.env` file in the root of your project and insert your key/value pairs
 API_KEY=YOUR_KEY
 ```
 
-Using Node, install the project dependencies: 
+Using Node, install the project dependencies:
 ```
 npm install
 ```
@@ -37,8 +37,11 @@ npm run build
 ```
 
 ## Specifications:
-* A user is able to select location where he/she looks for attrations.
-* If user left field empty he gets data for his current location. (Allow your browser to use your location).
+* A user is able to either use their current location or input an address.
+* If user left field empty the program will get data for their current location. (Allow your browser to use your location).
+* The program wil display a map with a marker on the user's location.
+* The user will able to choose from a variety of attractions (bars, restaurants, etc.).
+* The program will display results within walking distance for the user based on their location and chosen attraction.
 
 
 ## Technologies Used
@@ -47,4 +50,4 @@ _HTML, CSS, jQuery, Bootstrap, JavaScript, NodeJS_
 
 ### License
 
-*_Copyright (c) 2019 **Nina Potrebich**_*
+*_Copyright (c) 2019 **Nina Potrebich, Sharon Lee, Adilet Momunaliev, Will Quanstrom**_*
